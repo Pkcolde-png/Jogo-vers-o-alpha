@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silent Bark Oficial</title>
+
+    <style>
+        /* Efeito de deslizar suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: white;
+        }
+
+        header {
+            background: #020617;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid #38bdf8;
+        }
+
+        nav {
+            background: #1e293b;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .card {
+            background: #1e293b;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s, border 0.3s;
+            border: 1px solid transparent;
+        }
+
+        /* Efeito de destaque ao passar o mouse */
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #38bdf8;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background: #38bdf8;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0ea5e9;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #020617;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    Silent Bark Oficial
+</header>
+
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<section id="inicio">
+    <h1>Bem-vindo!</h1>
+    <p>Conheça a História do Jogo e o surgimento do personagem Cerne</p>
+</section>
+
+<section id="projetos">
+    <h2>Meus Projetos</h2>
+
+    <div class="card">
+    <h3>🎮 Download Versão (alpha)</h3>
+    <p>Esta é uma versão Alpha antecipada que estou liberando para vocês!</p>
+    <a href="https://download1076.mediafire.com/8f87xexzocrgWooseVvJmrfLnnw00q_ulz-k-Y6udwf9n7u9kAns9q5F9hPTnW7RzVbaBLAN-JMaFcIYmgb88b4zegSFpeBp5jn5Sf6BeXIuAr-46O1gx7zh0WNqNxSLuqY9gFgQiHZyRtCjDnW-4i6HJrV0PKv6hzIHgvtgkulQJTU/viezfhqnamyfznr/Silent+Bark+%28Pr%C3%A9-Alpha%29.apk" download>
+        <button>Download</button>
+    </a>
+</div>
+
+
+    <div class="card">
+        <h3>Visitar canal</h3>
+        <p>Acompanhe o desenvolvimento do jogo aqui.</p>
+        <button onclick="window.open('https://youtube.com/@pkcolde_yt?si=rLATr9NwZEfC2FpM', '_blank')">Ver Canal</button>
+    </div>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <p>Me chame no Instagram para bater um papo 👇</p>
+    <button onclick="window.open('https://www.instagram.com/pkcolde._yt?igsh=a2VqZmp6MGx5OW94', '_blank')">Instagram</button>
+</section>
+
+<footer>
+    © 2026 - Criado por Pkcolde YT ✓
+</footer>
+
+</body>
+</html>
