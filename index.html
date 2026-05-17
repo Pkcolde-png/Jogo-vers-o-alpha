@@ -34,6 +34,9 @@
         button { padding: 12px 25px; border: none; border-radius: 8px; background: #38bdf8; color: black; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
         button:hover { background: #0ea5e9; transform: scale(1.05); }
         footer { background: #020617; padding: 20px; text-align: center; margin-top: 50px; color: #94a3b8; }
+        
+        /* Estilo do contador global */
+        .download-contador { font-size: 14px; color: #38bdf8; margin-top: 12px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -81,6 +84,8 @@
         <a href="https://github.com/Pkcolde-png/Jogo-vers-o-alpha/releases/download/0.0.1/Silent.Bark.Pre-Alpha.apk" target="_blank">
             <button>Download Alpha</button>
         </a>
+        <!-- Texto que vai mostrar a contagem real vinda do GitHub -->
+        <div class="download-contador">Total de Downloads: <span id="contador-github">Carregando...</span></div>
     </div>
     <div class="card">
         <h3>Visitar canal</h3>
@@ -95,6 +100,40 @@
 </section>
 
 <footer>© 2026 - Criado por Pkcolde YT ✓</footer>
+
+<!-- Script que busca os downloads do GitHub de forma automática -->
+<script>
+    async function pegarDownloadsGithub() {
+        const urlAPI = "https://api.github.com/repos/Pkcolde-png/Jogo-vers-o-alpha/releases";
+        const elementoContador = document.getElementById('contador-github');
+
+        try {
+            const resposta = await fetch(urlAPI);
+            const dados = await resposta.json();
+            
+            let totalDownloads = 0;
+
+            // Passa por todas as versões (releases) e soma os downloads do arquivo .apk
+            dados.forEach(release => {
+                if (release.assets && release.assets.length > 0) {
+                    release.assets.forEach(asset => {
+                        if (asset.name.endsWith('.apk')) {
+                            totalDownloads += asset.download_count;
+                        }
+                    });
+                }
+            });
+
+            elementoContador.textContent = totalDownloads;
+        } catch (erro) {
+            console.error("Erro ao buscar downloads:", erro);
+            elementoContador.textContent = "Indisponível";
+        }
+    }
+
+    // Executa a função assim que a página carrega
+    pegarDownloadsGithub();
+</script>
 
 </body>
 </html>
